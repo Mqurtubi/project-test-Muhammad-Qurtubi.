@@ -86,7 +86,7 @@ async function card() {
             console.log(item.medium_image[0].url);
             return `
             <div class="aspect-[9/11] bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="${item.medium_image[0].url}" alt="${item.title}" class="w-full aspect-video">
+                <img src="${item.medium_image[0].url}" alt="${item.title}" class="w-full aspect-video" loading="lazy">
                 <p class="text-base text-slate-400 mt-5 px-5">${item.published_at}</p>
                 <p class="text-lg line-clamp-3 my-5 px-5">${item.title}</p>
             </div>
