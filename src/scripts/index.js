@@ -3,7 +3,16 @@ const navbar = document.getElementById("navbar");
 const containerPagination = document.getElementById("numberPagination");
 let currentPage = 1;
 let scrollTimeout;
+document.addEventListener("scroll",()=>{
+    const element1 = document.getElementById('parralax-text1');
+    const element2 = document.getElementById('parralax-text2');
+    console.log(element1)
+    const yPos1 = window.scrollY * (element1.getAttribute('data-speed') || 1);
+    const yPos2 = window.scrollY * (element2.getAttribute('data-speed') || 1);
 
+    element1.style.transform = `translateY(${yPos1 * 0.7}px)`;
+    element2.style.transform = `translateY(${yPos2 * 1}px)`;
+})
 function saveToLocalStorage(key, value) {
     localStorage.setItem(key, value);
 }
